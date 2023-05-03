@@ -9,6 +9,9 @@ on:
       testBoolParam:
         description: some test testParam
         default: "true"
+  issues:
+    types:
+      - opened
 
 jobs:
   print-stuff:
