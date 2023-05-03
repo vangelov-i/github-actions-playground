@@ -15,8 +15,5 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Print event details
-        run: echo "${{ toJSON(github) }}"
-
       - name: Print inputs details
         run: echo "${{ toJSON(inputs) }}"
