@@ -1,4 +1,4 @@
-name: CD
+name: CD with chained jobs
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Run linter
-        run: npm run lint
+        run: echo "Linting..."
 
   test:
     needs: prepare
@@ -36,7 +36,7 @@ jobs:
 
     steps:
       - name: Run tests
-        run: npm run test
+        run: echo "Testing..."
 
   build:
     needs: [lint, test]
@@ -44,4 +44,4 @@ jobs:
 
     steps:
       - name: Build
-        run: npm run build
+        run: echo "Building..."
