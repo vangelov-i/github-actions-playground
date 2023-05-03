@@ -8,7 +8,6 @@ on:
     inputs:
       testBoolParam:
         description: some test testParam
-        required: true
         default: "true"
 
 jobs:
@@ -16,8 +15,8 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: "Print event details"
+      - name: Print event details
         run: echo "${{ toJSON(github) }}"
 
-      - name: "Print inputs details"
+      - name: Print inputs details
         run: echo "${{ toJSON(inputs) }}"
