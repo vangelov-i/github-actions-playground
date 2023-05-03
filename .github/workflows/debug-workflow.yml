@@ -1,0 +1,23 @@
+name: Debug workflow context & metadata
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      testBoolParam:
+        description: some test testParam
+        required: true
+        default: "true"
+
+jobs:
+  print-stuff:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: "Print event details"
+        run: echo "${{ toJSON(github) }}"
+
+      - name: "Print inputs details"
+        run: echo "${{ toJSON(inputs) }}"
