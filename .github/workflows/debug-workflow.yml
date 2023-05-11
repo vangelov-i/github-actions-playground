@@ -13,10 +13,6 @@ on:
       deploy_env:
         description: test repository environments
         default: "dev"
-        options:
-          - "dev"
-          - "test"
-          - "prod"
   issues:
     types:
       - opened
