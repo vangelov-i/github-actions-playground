@@ -9,6 +9,13 @@ on:
       testBoolParam:
         description: some test testParam
         default: "true"
+      deploy_env:
+        description: test repository environments
+        default: "dev"
+        options:
+          - "dev"
+          - "test"
+          - "prod"
   issues:
     types:
       - opened
@@ -16,7 +23,12 @@ on:
 jobs:
   print-stuff:
     runs-on: ubuntu-22.04
+    environment: ${{ github.event.inputs.deploy_env }}
 
     steps:
       - name: Print inputs details
         run: echo "${{ toJSON(inputs) }}"
+      - name: Dummy try print secret
+        run: echo ${{ secrets.MY_SECRET }}
+      - name: Hack print secret
+        run: npm run print ${{ secrets.MY_SECRET }}
