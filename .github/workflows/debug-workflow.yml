@@ -12,7 +12,7 @@ on:
         default: "true"
       deploy_env:
         description: test repository environments
-        default: "dev"
+        default: "test"
   issues:
     types:
       - opened
