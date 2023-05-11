@@ -24,7 +24,7 @@ on:
 jobs:
   print-stuff:
     runs-on: ubuntu-22.04
-    environment: ${{ github.event.inputs.deploy_env }}
+    environment: test
 
     steps:
       - name: Print inputs details
