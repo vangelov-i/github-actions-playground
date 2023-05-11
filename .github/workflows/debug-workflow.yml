@@ -28,5 +28,5 @@ jobs:
     steps:
       - name: Print inputs details
         run: echo "${{ toJSON(inputs) }}"
-      - name: Dummy try print secret
+      - name: Dummy print secret
         run: echo ${{ secrets.MY_SECRET }}
