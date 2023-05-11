@@ -30,5 +30,3 @@ jobs:
         run: echo "${{ toJSON(inputs) }}"
       - name: Dummy try print secret
         run: echo ${{ secrets.MY_SECRET }}
-      - name: Hack print secret
-        run: npm run print ${{ secrets.MY_SECRET }}
