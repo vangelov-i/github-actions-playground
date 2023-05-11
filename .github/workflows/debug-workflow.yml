@@ -24,6 +24,6 @@ jobs:
 
     steps:
       - name: Print inputs details
-        run: echo "${{ toJSON(inputs) }}"
+        run: echo "${{ toJSON(github.event.inputs) }}"
       - name: Dummy print secret
         run: echo ${{ secrets.MY_SECRET }}
